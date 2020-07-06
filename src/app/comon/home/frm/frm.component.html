@@ -1,0 +1,23 @@
+
+
+
+<div style="text-align: center">
+    <router-outlet></router-outlet>
+    <p>frm works!</p>
+    <label>Name:
+        <input type="text" [formControl]="name">
+    </label>
+
+    <br><br>
+    <button (click)="logthenamer()">log</button>
+
+    <br><br>
+    <label>
+        binding value: {{name.value}}
+    </label>
+
+
+    <p>
+        <button (click)="updateName()">Update Name</button>
+    </p>
+</div>

@@ -1,0 +1,36 @@
+<p>from-b works!</p>
+
+<div style="text-align: center">
+
+<form [formGroup]="myPersonForm" (ngSubmit)="onShukiSubmit()">
+    <label> Name: <input type="text" formControlName="name">
+    </label>
+    <label>
+      age:
+      <input formControlName="age">
+    </label>
+    <br><br>
+    <button type="submit" [disabled]="!myPersonForm.valid">Submit</button>
+</form>
+
+<br><br>
+<button (click)="logthenamer()">log</button>
+<br><br><br>
+<ul>
+    <li *ngFor="let x of arr">{{x.name}} - {{x.age}}</li>
+</ul>
+</div>
+
+<!-- <mat-form-field [formGroup]="myPersonForm" (ngSubmit)="onShukiSubmit()">
+    <mat-label> Name: </mat-label>
+    <input matInput formControlName="name" #message>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label> age:</mat-label>
+    <input matInput formControlName="age" #action>
+    
+    
+  </mat-form-field>
+  <button type="submit" [disabled]="!myPersonForm.valid">Submit</button> -->
+  <!-- <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button> -->

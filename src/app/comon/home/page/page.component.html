@@ -1,0 +1,77 @@
+<p>page works!</p>
+<mat-toolbar>
+    <span>My Application</span>
+
+    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)='isShow()'>{{show}}
+    </button>
+
+
+    <!-- <a href="">some</a>
+        <a href="">some</a>
+        <a href="">some</a>
+        <a href="">some</a> -->
+</mat-toolbar>
+
+<main role="main">
+
+
+    <!-- <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Album example</h1>
+            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
+                etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+            <p>
+                <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            </p>
+        </div>
+    </section> -->
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div [hidden]="!show" class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm" *ngFor="let itme of Products">
+                        <a href="https://github.com/ChaimBaror?tab=repositories">
+                            <img src={{itme.img}} alt={{itme.name}} width="100%" height="225"></a>
+                        <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                            xmlns="" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role=img aria-label="Placeholder: Thumbnail">
+                            
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em">{{itme.name}}</text>
+                        </svg> -->
+                        <div class="card-body">
+                            <p class="card-text">זה המקום לתאור המוצר ..... מזהוצר הזה נשאר {{itme.amount}} פריטים</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <!-- <button type="button" (click)=onEdit($evevt) class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                                </div>
+                                <small class="text-muted">amount : {{itme.amount}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div [hidden]="show">
+                <ul *ngFor="let itme of Products">
+                    <div style="display: flex">
+                        <a href="https://github.com/ChaimBaror?tab=repositories"> <img src={{itme.img}}
+                                alt={{itme.name}} width="auto" height="100" style="padding-left: 0%"></a>
+                        <div style="display: flex">
+
+                            <button style="padding-bottom:  0%" type="button"
+                                class="btn btn-sm btn-outline-secondary">View</button>
+                            <small class="text-muted">amount : {{itme.amount}}</small>
+                        </div> <span>{{itme.name}}</span>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</main>
